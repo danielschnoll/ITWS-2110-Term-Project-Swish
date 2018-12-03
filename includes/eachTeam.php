@@ -11,7 +11,7 @@
     }
 
     array_push($numsUsed, $randomNum);
-    echo(sizeof($numsUsed));
+    //echo(sizeof($numsUsed));
     //echo $randomNum;
     
     $color = "card ". $colors[$randomNum] ." darken-1";
