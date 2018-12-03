@@ -15,24 +15,27 @@
       $team_name = $_POST['name'];
 
       $sql = "SELECT * FROM `teams` WHERE `name` = \"" . $team_name . "\"";
-
       $userResult = $db->query($sql);
-
       $userRecord = $userResult->fetch_assoc();
 
-      if($userRecord['name'] != $team_name){
+      if ($userRecord['name'] != $team_name)
+      {
         echo("There's no team with this name.");
-      }
-      else{
-        
-        $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $userRecord['id'] . "\")";
-        $relationResult = $db->query($relationSQL);
+      } else
+      {
+        $sql = "SELECT * FROM `user_teams` WHERE `u_id` = \"" . $currentUserId . "\" AND `t_id` = \"" . $userRecord['id'] . "\"";
+        $userTeamsResult = $db->query($sql);
+        $userTeamsRecord = $userTeamsResult->fetch_assoc();
 
-        header("Location: index.php");
-        exit;
+        if ($userTeamsRecord == NULL) {
+          $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $userRecord['id'] . "\")";
+          $relationResult = $db->query($relationSQL);
+          header("Location: index.php");
+          exit;
+        }
+
+        echo("You are already on that team.");
       }
     }
-    
-    
   }
 ?>
