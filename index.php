@@ -229,7 +229,7 @@
         $date = strtotime($eventsRecord['date']);
 
         echo date('m-d-Y, H:i', $date);
-        echo '</td><td></tr>';
+        echo '</td></tr>';
       }
 
       echo '</tbody>';
