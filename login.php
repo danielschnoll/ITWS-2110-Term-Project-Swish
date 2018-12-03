@@ -12,21 +12,21 @@
   
   /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
+
   @ $db = new mysqli('localhost', 'root', '', 'swishdb');
   
   if ($db->connect_error) {
     echo '<div class="messages">Could not connect to the database. Error: ';
     echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
-  } else {
-    $dbOk = true; 
+  } else
+  {
+    $dbOk = true;
   }
-
 ?>
 
-<?php 
-  include('includes/head.inc.php'); 
+<?php
+  include('includes/head.inc.php');
 ?>
-
 
 <?php
   if($dbOk){
@@ -34,6 +34,8 @@
   }
 ?>
 
+<?php include('includes/notifications.inc.php');
+?>
 
 <?php include('includes/foot.inc.php'); 
   // footer info and closing tags

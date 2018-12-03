@@ -59,7 +59,7 @@
                 <label for='password'>Enter your password</label>
               </div>
               <label style='float: right;'>
-                <a class='pink-text' href='forgotpassword.php'><b>Forgot Password?</b></a>
+                <a class='pink-text' href='forgot_action.php'><b>Forgot Password?</b></a>
               </label>
               <label style='float: left;'>
                 <a class='pink-text' href='accountcreate.php'><b>Create Account</b></a>

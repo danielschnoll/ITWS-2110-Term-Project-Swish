@@ -4,14 +4,15 @@
 
   /* Create a new database connection object, passing in the host, username,
    password, and database to use. The "@" suppresses errors. */
+
   @ $db = new mysqli('localhost', 'root', '', 'swishdb');
+
   if ($db->connect_error) {
       echo '<div class="messages">Could not connect to the database. Error: ';
       echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
-  } 
-
-  else{
-    if (isset($_POST)){
+  } else
+  {
+    if (isset($_POST)) {
       $home_name = $_POST['home_name'];
       $away_name = $_POST['away_name'];
       $location = $_POST['location'];
@@ -27,20 +28,19 @@
       $awayResult = $db->query($sql);
       $awayRecord = $awayResult->fetch_assoc();
 
-      if($homeRecord['name'] != $home_name || $awayRecord['name'] != $away_name){
-        echo("One of these teams doesn't exist.");
-      }
-      else{
+      if($homeRecord['name'] != $home_name || $awayRecord['name'] != $away_name) {
+        # echo("One of these teams doesn't exist.");
 
+        header("Location: teams.php?alert=One of these teams does not exist.");
+        exit;
+      } else
+      {
         $relationSQL = "INSERT INTO `events` (home_id, away_id, date, location) VALUES (\"" . $homeRecord['id'] . "\", \"" . $awayRecord['id'] . "\", \"" . $datetime . "\", \"" . $location . "\")";
         $relationResult = $db->query($relationSQL);
 
         header("Location: index.php");
         exit;
       }
-      
     }
-    
-    
   }
 ?>
