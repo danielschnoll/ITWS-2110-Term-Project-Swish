@@ -22,11 +22,11 @@
       session_start();
       $_SESSION['userID'] = $userRecord['id'];
 
-      header("Location: index.php");
+      header("Location: index.php?msg=You have been logged in.");
       exit;
     } else
     {
-        header("Location: login.php?alert=You do not have an account.");
+        header("Location: login.php?msg=You do not have an account.");
         exit;
 
     	# echo ("You do not have an account");

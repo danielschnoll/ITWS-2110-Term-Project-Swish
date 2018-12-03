@@ -31,14 +31,14 @@
       if($homeRecord['name'] != $home_name || $awayRecord['name'] != $away_name) {
         # echo("One of these teams doesn't exist.");
 
-        header("Location: teams.php?alert=One of these teams does not exist.");
+        header("Location: teams.php?msg=One of these teams does not exist.");
         exit;
       } else
       {
         $relationSQL = "INSERT INTO `events` (home_id, away_id, date, location, home_score, away_score) VALUES (\"" . $homeRecord['id'] . "\", \"" . $awayRecord['id'] . "\", \"" . $datetime . "\", \"" . $location . "\", 0, 0)";
         $relationResult = $db->query($relationSQL);
 
-        header("Location: index.php");
+        header("Location: index.php?msg=Event created.");
         exit;
       }
     }

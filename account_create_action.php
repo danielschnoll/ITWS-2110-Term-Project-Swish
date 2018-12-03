@@ -21,7 +21,7 @@
       if($userRecord['email'] == $email){
         # echo("An account already exists with this email");
 
-        header("Location: login.php?alert=An account already exists with this email.");
+        header("Location: login.php?msg=An account already exists with this email.");
         exit;
       }
       else{
@@ -29,7 +29,7 @@
         $sql = "INSERT INTO `users` (username, email, password) VALUES (\"" . $username . "\", \"" . $email . "\", \"" . $hashedpw . "\")";
         $userResult = $db->query($sql);
 
-        header("Location: login.php");
+        header("Location: login.php?msg=Account created, please login.");
         exit;
       }
     }

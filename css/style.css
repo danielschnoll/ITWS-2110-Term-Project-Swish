@@ -35,7 +35,6 @@ body {
 #toast-container {
     min-width: auto;
     left: auto;
-    background: red;
     font: caption
 }
 
@@ -44,4 +43,20 @@ body {
 label,
 nav {
     color: inherit;
+}
+
+input::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important; 
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important; 
+}
+ 
+input:-ms-input-placeholder { 
+color: white !important; 
 }

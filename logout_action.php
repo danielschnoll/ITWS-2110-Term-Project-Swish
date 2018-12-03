@@ -8,6 +8,6 @@
   unset($tmp);
   session_start();
 
-  header("Location: login.php?alert=You have been logged out.");
+  header("Location: login.php?msg=You have been logged out.");
   exit;
 ?>

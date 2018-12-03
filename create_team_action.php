@@ -22,7 +22,7 @@
       if($userRecord['name'] == $team_name) {
         #echo("There's already a team with this name.");
 
-        header("Location: teams.php?alert=There is already a team with that name.");
+        header("Location: teams.php?msg=There is already a team with that name.");
         exit;
       } else
       {
@@ -37,7 +37,7 @@
         $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $teamRecord['id'] . "\")";
         $relationResult = $db->query($relationSQL);
 
-        header("Location: index.php");
+        header("Location: index.php?msg=Team created.");
         exit;
       }
     }

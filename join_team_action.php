@@ -22,7 +22,7 @@
       if ($userRecord['name'] != $team_name) {
         # echo("There's no team with this name.");
 
-        header("Location: teams.php?alert=There is no team with that name.");
+        header("Location: teams.php?msg=There is no team with that name.");
         exit;
       } else
       {
@@ -34,18 +34,18 @@
           $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $userRecord['id'] . "\")";
           $relationResult = $db->query($relationSQL);
 
-          header("Location: index.php");
+          header("Location: index.php?msg=You are now on that team.");
           exit;
         }
 
-        header("Location: teams.php?alert=You are already on that team.");
+        header("Location: teams.php?msg=You are already on that team.");
         exit;
 
         # echo("You are already on that team.");
       }
     } else
     {
-        header("Location: teams.php?alert=Invalid input.");
+        header("Location: teams.php?msg=Invalid input.");
         exit;
     }
   }
