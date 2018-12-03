@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col s12 m6">
-    <div class="card green darken-1">
+    <div class="card green darken-2">
       <div class="card-content white-text">
         <span class="card-title">Create a Team</span>
         <p>Creating a team is simple. All you need is a unique name.</p>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="col s12 m6">
-    <div class="card light-blue darken-1">
+    <div class="card light-blue darken-2">
       <div class="card-content white-text">
         <span class="card-title">Join a Team</span>
         <p>Joining a team is also simple. Just type the name of the team.</p>
@@ -38,7 +38,7 @@
 
 <div class="row">
   <div class="col s12 m6">
-    <div class="card deep-orange darken-1">
+    <div class="card deep-orange darken-2">
       <div class="card-content white-text">
         <span class="card-title">Create an Event</span>
         <p>If both of your teams know you want to play, have someone from either side create the event.</p>
@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="col s12 m6">
-    <div class="card yellow darken-2">
+    <div class="card teal darken-2">
       <div class="card-content white-text">
         <span class="card-title">Add a Win/Loss</span>
         <p>Enter your win or loss</p>

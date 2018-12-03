@@ -5,7 +5,7 @@
   </div>
 
 <div class="col s12 m4">
-  <div class="card cyan darken-1">
+  <div class="card cyan darken-2">
     <div class="card-content white-text">
       <span class="card-title">Upcoming Events:</span>
       <table>
