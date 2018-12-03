@@ -1,7 +1,7 @@
 <?php
   /* Create a new database connection object, passing in the host, username,
    password, and database to use. The "@" suppresses errors. */
-  @ $db = new mysqli('localhost', 'root', 'swish', 'swishdb');
+  @ $db = new mysqli('localhost', 'root', '', 'swishdb');
   if ($db->connect_error) {
       echo '<div class="messages">Could not connect to the database. Error: ';
       echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
