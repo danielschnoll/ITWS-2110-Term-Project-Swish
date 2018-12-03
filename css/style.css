@@ -64,7 +64,6 @@ input:-ms-input-placeholder {
     color: white !important;
 }
 
-nav {
-    height: 64px;
-    line-height: 63px;
+nav ul a {
+    display: block;
 }
