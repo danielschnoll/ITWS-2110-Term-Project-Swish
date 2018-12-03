@@ -34,7 +34,7 @@
           $relationSQL = "DELETE FROM `user_teams` WHERE `u_id` = \"" . $currentUserId . "\" AND `t_id` = \"" . $userRecord['id'] . "\"";
           $relationResult = $db->query($relationSQL);
 
-          header("Location: index.php?msg=You are now out of that team.");
+          header("Location: index.php?msg=You are now off that team.");
           exit;
         }
 

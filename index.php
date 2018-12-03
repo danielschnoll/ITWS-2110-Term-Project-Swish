@@ -105,10 +105,10 @@
       echo $teamRecord['losses'];
 
       $totalLosses += $teamRecord['losses'];
-      echo '</td><td>';
+      echo '</td><td class="center-align">';
       echo "
         <input name='name' id='name' type='hidden' form='leave_team_form_". $i ."' value='". $teamRecord["name"] ."'>
-        <button type='submit' name='btn_login' form='leave_team_form_". $i ."' class='col s8 btn waves-effect indigo'>
+        <button type='submit' name='btn_login' form='leave_team_form_". $i ."' class='col btn waves-effect indigo' style='float: none;'>
           <i class='material-icons cancel'>remove_circle</i>
         </button>
 ";
