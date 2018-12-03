@@ -22,7 +22,7 @@
       if($userRecord['name'] == $team_name) {
         #echo("There's already a team with this name.");
 
-        header("Location: teams.php?alert=There is already a team with that name.");
+        header("Location: teams.php?msg=There is already a team with that name.");
         exit;
       } else
       {

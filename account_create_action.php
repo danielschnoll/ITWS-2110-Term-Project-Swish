@@ -21,7 +21,7 @@
       if($userRecord['email'] == $email){
         # echo("An account already exists with this email");
 
-        header("Location: login.php?alert=An account already exists with this email.");
+        header("Location: login.php?msg=An account already exists with this email.");
         exit;
       }
       else{

@@ -1,7 +1,7 @@
 <?php
 
-  if (isset($_GET['alert'])) {
-    echo "<script>Materialize.toast('" . $_GET['alert'] . "', 2000)</script>";
+  if (isset($_GET['msg'])) {
+    echo "<script>Materialize.toast('" . $_GET['msg'] . "', 2000)</script>";
   }
 
   echo "<script>

@@ -31,7 +31,7 @@
       if($homeRecord['name'] != $home_name || $awayRecord['name'] != $away_name) {
         # echo("One of these teams doesn't exist.");
 
-        header("Location: teams.php?alert=One of these teams does not exist.");
+        header("Location: teams.php?msg=One of these teams does not exist.");
         exit;
       } else
       {

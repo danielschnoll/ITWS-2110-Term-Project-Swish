@@ -2,7 +2,7 @@
   session_start();
 
   if (!isset($_SESSION['userID'])) {
-    header("Location: login.php?alert=Please login.");
+    header("Location: login.php?msg=Please login.");
     exit;
   }
 

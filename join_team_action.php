@@ -22,7 +22,7 @@
       if ($userRecord['name'] != $team_name) {
         # echo("There's no team with this name.");
 
-        header("Location: teams.php?alert=There is no team with that name.");
+        header("Location: teams.php?msg=There is no team with that name.");
         exit;
       } else
       {
@@ -38,14 +38,14 @@
           exit;
         }
 
-        header("Location: teams.php?alert=You are already on that team.");
+        header("Location: teams.php?msg=You are already on that team.");
         exit;
 
         # echo("You are already on that team.");
       }
     } else
     {
-        header("Location: teams.php?alert=Invalid input.");
+        header("Location: teams.php?msg=Invalid input.");
         exit;
     }
   }
