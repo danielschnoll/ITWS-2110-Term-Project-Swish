@@ -37,7 +37,7 @@
         $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $teamRecord['id'] . "\")";
         $relationResult = $db->query($relationSQL);
 
-        header("Location: index.php");
+        header("Location: index.php?msg=Team created.");
         exit;
       }
     }

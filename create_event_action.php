@@ -38,7 +38,7 @@
         $relationSQL = "INSERT INTO `events` (home_id, away_id, date, location) VALUES (\"" . $homeRecord['id'] . "\", \"" . $awayRecord['id'] . "\", \"" . $datetime . "\", \"" . $location . "\")";
         $relationResult = $db->query($relationSQL);
 
-        header("Location: index.php");
+        header("Location: index.php?msg=Event created.");
         exit;
       }
     }
