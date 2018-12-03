@@ -2,5 +2,13 @@
     min-width: auto;
     left: auto;
     background: red;
-    font: caption;
+    font: caption
+}
+
+.input-field label,
+.input-field>label,
+.input-field label,
+label,
+nav {
+    color: inherit;
 }
