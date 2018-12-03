@@ -45,6 +45,7 @@
     echo '<ul class="right hide-on-med-and-down">';
     echo '<li><a id="navlinks" href="index.php">Home</a></li>';
     echo '<li class="active"><a id="navlinks" href="teams.php">Teams</a></li>';
+    echo '<li class="active"><a id="navlinks" href="roaster.php">Roster</a></li>';
     echo '<li><a id="navlinks" href="login.php">Logout</a></li>';
     echo '</ul>';
 
