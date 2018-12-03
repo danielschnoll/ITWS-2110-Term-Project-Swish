@@ -12,5 +12,6 @@
             <tr>
               <th>Team Name</th>
               <th>Win / Loss Ratio</th>
+              <th>Leave Team</th>
             </tr>
           </thead>

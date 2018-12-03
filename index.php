@@ -77,6 +77,7 @@
     $relationResult = $db->query($relationQuery);
     $relationNumRecords = $relationResult->num_rows;
 
+    echo "<form id = 'leave_team_form'class = 'container' action = 'leave_team_action.php' method='post'>";
     echo '<tbody>';
     for ($i = 0; $i < $relationNumRecords; $i++) {
       $record = $relationResult->fetch_assoc();
@@ -100,10 +101,19 @@
       echo $teamRecord['losses'];
 
       $totalLosses += $teamRecord['losses'];
+      echo '</td><td>';
+      echo "
+        <input name='name' id='name' type='hidden' form='leave_team_form' value='". $teamRecord["name"] ."'>
+        <button type='submit' name='btn_login' form='leave_team_form' class='col s8 btn waves-effect indigo'>
+          <i class='material-icons cancel'>remove_circle</i>
+        </button>
+";
       echo '</td></tr>';
 
       $teamResult->free();
     }
+
+    echo "<form>";
 
     $relationResult->free();
   }
