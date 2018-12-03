@@ -44,11 +44,9 @@
     // This block is for the links on the right.
     echo '<ul class="right hide-on-med-and-down">';
     echo '<li><a id="navlinks" href="index.php">Home</a></li>';
-
-
-    echo '<li><a id="navlinks" href="teams.php">Team Management</a></li>';
-    echo '<li class="active"><a id="navlinks" href="roster.php">Roster</a></li>';
-    echo '<li><a id="navlinks" href="logout_action.php">Logout</a></li>';
+    echo '<li class="active"><a id="navlinks" href="teams.php">Teams</a></li>';
+    echo '<li class="active"><a id="navlinks" href="roaster.php">Roaster</a></li>';
+    echo '<li><a id="navlinks" href="login.php">Logout</a></li>';
     echo '</ul>';
 
     $userResult->free();
@@ -66,6 +64,7 @@
 
   $colors = array("lime", "red", "pink", "purple", "blue", "teal", "orange lighten", "light-green", "deep-orange ", "light-blue");
 
+  $notRepeat = array();
   //echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 
 
@@ -77,12 +76,11 @@
 
 
 
-    $numsUsed = array();
+
 
     for ($i = 0; $i < $relationNumRecords; $i++) {
       $record = $relationResult->fetch_assoc();
 
-      
 
 
 ?>
@@ -110,19 +108,17 @@ echo '<tbody>';
       echo $teamRecord['name'];
 
        
-      $teamMembers = 'SELECT * FROM user_teams WHERE t_id='. $currentTeamId;
+      $teamMembers = 'SELECT * FROM user_teams WHERE u_id='. $currentTeamId;
       $MembersResult = $db->query($teamMembers);
       $numTeamMembers = $MembersResult->num_rows;
-
-      //echo($numTeamMembers);
 
       for ($x = 0; $x < $numTeamMembers; $x++) {
         echo '<tr><td>';
         
         $userId = $MembersResult->fetch_assoc();
-        $current = $userId['u_id'];
+        $currentUserId = $userId['t_id'];
         
-        $currentMember = 'SELECT * FROM users WHERE id = '. $current;
+        $currentMember = 'SELECT * FROM users WHERE id = '. $currentUserId;
         $memberResult = $db->query($currentMember);
         $memberInfo = $memberResult->fetch_assoc();
 
