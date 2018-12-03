@@ -1,5 +1,11 @@
 <?php 
   session_start();
+
+  if (!isset($_SESSION['userID'])) {
+    header("Location: login.php?alert=Please login.");
+    exit;
+  }
+
   $currentUserId = $_SESSION['userID'];
 
   include('includes/init.inc.php'); // include the DOCTYPE and opening tags
@@ -50,7 +56,7 @@
     echo '<ul class="right hide-on-med-and-down">';
     echo '<li><a id="navlinks" href="index.php">Home</a></li>';
     echo '<li class="active"><a id="navlinks" href="teams.php">Teams</a></li>';
-    echo '<li><a id="navlinks" href="login.php">Logout</a></li>';
+    echo '<li><a id="navlinks" href="logout_action.php">Logout</a></li>';
     echo '</ul>';
 
     $userResult->free();

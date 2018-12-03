@@ -1,5 +1,11 @@
-<?php 
+<?php
   session_start();
+
+  if (!isset($_SESSION['userID'])) {
+    header("Location: login.php?alert=Please login.");
+    exit;
+  }
+
   $currentUserId = $_SESSION['userID'];
 
   include('includes/init.inc.php'); // include the DOCTYPE and opening tags
@@ -8,7 +14,7 @@
 <title>Swish</title>
 
 <?php
-  // We'll need a database connection both for retrieving records and for 
+  // We'll need a database connection both for retrieving records and for
   // inserting them.  Let's get it up front and use it for both processes
   // to avoid opening the connection twice.  If we make a good connection, 
   // we'll change the $dbOk flag.
@@ -48,7 +54,7 @@
     echo '<ul class="right hide-on-med-and-down">';
     echo '<li class="active"><a id="navlinks" href="index.php">Home</a></li>';
     echo '<li><a id="navlinks" href="teams.php">Teams</a></li>';
-    echo '<li><a id="navlinks" href="login.php">Logout</a></li>';
+    echo '<li><a id="navlinks" href="logout_action.php">Logout</a></li>';
     echo '</ul>';
 
     $userResult->free();
