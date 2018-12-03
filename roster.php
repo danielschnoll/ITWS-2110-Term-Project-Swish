@@ -81,7 +81,7 @@
     for ($i = 0; $i < $relationNumRecords; $i++) {
       $record = $relationResult->fetch_assoc();
 
-      $randomColor = rand(0,5);
+      //$randomColor = rand(0,5);
 
 
 ?>
@@ -109,17 +109,19 @@ echo '<tbody>';
       echo $teamRecord['name'];
 
        
-      $teamMembers = 'SELECT * FROM user_teams WHERE u_id='. $currentTeamId;
+      $teamMembers = 'SELECT * FROM user_teams WHERE t_id='. $currentTeamId;
       $MembersResult = $db->query($teamMembers);
       $numTeamMembers = $MembersResult->num_rows;
+
+      //echo($numTeamMembers);
 
       for ($x = 0; $x < $numTeamMembers; $x++) {
         echo '<tr><td>';
         
         $userId = $MembersResult->fetch_assoc();
-        $currentUserId = $userId['t_id'];
+        $current = $userId['u_id'];
         
-        $currentMember = 'SELECT * FROM users WHERE id = '. $currentUserId;
+        $currentMember = 'SELECT * FROM users WHERE id = '. $current;
         $memberResult = $db->query($currentMember);
         $memberInfo = $memberResult->fetch_assoc();
 
