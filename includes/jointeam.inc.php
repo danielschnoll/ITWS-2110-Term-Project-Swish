@@ -5,7 +5,7 @@
           <span class="card-title">Join a Team</span>
           <p>Joining a team is also simple. Just type the name of the team.</p>
         </div>
-        <div class="card-action">
+        <div class="card-action white-text">
           <form class = "container" action = "join_team_action.php" method="post">
             <input name = "name" placeholder="Team Name" id="name" type="text" class="validate">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
