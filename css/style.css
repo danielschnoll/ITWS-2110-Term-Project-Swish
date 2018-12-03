@@ -32,3 +32,16 @@ body {
 	font-weight: bold;
 
 }
+#toast-container {
+    min-width: auto;
+    left: auto;
+    background: red;
+    font: caption
+}
+
+.input-field label,
+.input-field>label,
+label,
+nav {
+    color: inherit;
+}
