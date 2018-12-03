@@ -35,6 +35,19 @@
         exit;
       } else
       {
+        $homeID = $homeRecord['id'];
+        $awayID = $awayRecord['id'];
+
+        //Check if user is on the team where the score is being reported
+        $u_sql = "SELECT * FROM `user_teams` WHERE `u_id` = $currentUserId and (`t_id` = $homeID or `t_id`= $awayID)";
+        $userValidationResult = $db->query($u_sql);
+        $userValidationData = $userValidationResult->fetch_assoc();
+        $user_teamID = $userValidationData['id'];
+        if(!$user_teamID){
+            header("Location: teams.php?msg=You are not a member of either of these teams.");
+            exit;
+        }
+
         $relationSQL = "INSERT INTO `events` (home_id, away_id, date, location, home_score, away_score) VALUES (\"" . $homeRecord['id'] . "\", \"" . $awayRecord['id'] . "\", \"" . $datetime . "\", \"" . $location . "\", 0, 0)";
         $relationResult = $db->query($relationSQL);
 

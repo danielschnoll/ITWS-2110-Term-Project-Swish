@@ -26,11 +26,21 @@
             $awayData = $awayResult->fetch_assoc();
 
             if($homeData['name'] != $home_name || $awayData['name'] != $away_name){
-                echo("One of these teams was not found!");
+                header("Location: teams.php?msg=One of these teams does not exist.");
             }
             else{
                 $homeID = $homeData['id'];
                 $awayID = $awayData['id'];
+
+                //Check if user is on the team where the score is being reported
+                $u_sql = "SELECT * FROM `user_teams` WHERE `u_id` = $currentUserId and (`t_id` = $homeID or `t_id`= $awayID)";
+                $userValidationResult = $db->query($u_sql);
+                $userValidationData = $userValidationResult->fetch_assoc();
+                $user_teamID = $userValidationData['id'];
+                if(!$user_teamID){
+                    header("Location: teams.php?msg=You are not a member of either of these teams.");
+                    exit;
+                }
 
                 //Find the game that was played and update that event score
                 $sql = "SELECT * FROM `events` WHERE `home_score` = 0 and `away_score` = 0 and `home_id` = $homeID and `away_id` = $awayID";
@@ -40,7 +50,8 @@
                 $updateRowID = $updateRowData['id'];
 
                 if(!$updateRowID){
-                    echo("This game has already been updated");
+                    header("Location: teams.php?msg=The score cannot be updated.");
+                    exit;
                 }
                 else{
                     $relationSQL = "UPDATE `events` SET `home_score` = $home_score , `away_score` = $away_score WHERE `id` = $updateRowID";
@@ -60,7 +71,7 @@
                         $relationSQL = "UPDATE `teams` SET `losses` = `losses`+ 1 WHERE `id` = $homeID";
                         $relationResult = $db->query($relationSQL);
                     }
-                    header("Location: index.php");
+                    header("Location: index.php?msg=The score was updated!");
                 }
                 exit;
             }
