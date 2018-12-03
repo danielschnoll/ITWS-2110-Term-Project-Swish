@@ -1,3 +1,5 @@
-.toast-container .red {
+#toast-container {
+    min-width: auto;
+    left: auto;
     background: red;
 }

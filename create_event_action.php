@@ -29,7 +29,10 @@
       $awayRecord = $awayResult->fetch_assoc();
 
       if($homeRecord['name'] != $home_name || $awayRecord['name'] != $away_name) {
-        echo("One of these teams doesn't exist.");
+        # echo("One of these teams doesn't exist.");
+
+        header("Location: teams.php?alert=One of these teams does not exist.");
+        exit;
       } else
       {
         $relationSQL = "INSERT INTO `events` (home_id, away_id, date, location) VALUES (\"" . $homeRecord['id'] . "\", \"" . $awayRecord['id'] . "\", \"" . $datetime . "\", \"" . $location . "\")";

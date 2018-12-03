@@ -58,7 +58,10 @@
 
 ?>
 
-<?php include ('includes/teamsforms.inc.php');
+<?php include('includes/teamsforms.inc.php');
+?>
+
+<?php include('includes/notifications.inc.php');
 ?>
 
 <?php include('includes/foot.inc.php'); 

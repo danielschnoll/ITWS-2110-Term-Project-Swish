@@ -20,7 +20,10 @@
       $userRecord = $userResult->fetch_assoc();
 
       if($userRecord['name'] == $team_name) {
-        echo("There's already a team with this name.");
+        #echo("There's already a team with this name.");
+
+        header("Location: teams.php?alert=There is already a team with that name.");
+        exit;
       } else
       {
         $sql = "INSERT INTO `teams` (name, wins, losses) VALUES (\"" . $team_name . "\", \"" . 0 . "\", \"" . 0 . "\")";

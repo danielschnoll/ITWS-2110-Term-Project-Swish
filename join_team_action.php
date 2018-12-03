@@ -12,7 +12,7 @@
       echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
   } else
   {
-    if (isset($_POST)) {
+    if (isset($_POST) && !empty($_POST['name'])) {
       $team_name = $_POST['name'];
 
       $sql = "SELECT * FROM `teams` WHERE `name` = \"" . $team_name . "\"";
@@ -30,12 +30,20 @@
         if ($userTeamsRecord == NULL) {
           $relationSQL = "INSERT INTO `user_teams` (u_id, t_id) VALUES (\"" . $currentUserId . "\", \"" . $userRecord['id'] . "\")";
           $relationResult = $db->query($relationSQL);
+
           header("Location: index.php");
           exit;
         }
 
-        echo("You are already on that team.");
+        header("Location: teams.php?alert=You are already on that team.");
+        exit;
+
+        # echo("You are already on that team.");
       }
+    } else
+    {
+        header("Location: teams.php?alert=Invalid input.");
+        exit;
     }
   }
 ?>
