@@ -20,7 +20,10 @@
       $userRecord = $userResult->fetch_assoc();
 
       if ($userRecord['name'] != $team_name) {
-        echo("There's no team with this name.");
+        # echo("There's no team with this name.");
+
+        header("Location: teams.php?alert=There is no team with that name.");
+        exit;
       } else
       {
         $sql = "SELECT * FROM `user_teams` WHERE `u_id` = \"" . $currentUserId . "\" AND `t_id` = \"" . $userRecord['id'] . "\"";
