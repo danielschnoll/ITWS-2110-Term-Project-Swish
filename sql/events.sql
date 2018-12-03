@@ -1,13 +1,14 @@
 -- create the tables for our events
 
 CREATE TABLE `events` (
- `id` int unsigned NOT NULL AUTO_INCREMENT,
- `home_id` int unsigned NOT NULL,
- `away_id` int unsigned NOT NULL,
- `date` datetime NOT NULL,
- `location` varchar(100) NOT NULL, 
- PRIMARY KEY (`id`)
-);
+  `id` int(10) UNSIGNED NOT NULL,
+  `home_id` int(10) UNSIGNED NOT NULL,
+  `away_id` int(10) UNSIGNED NOT NULL,
+  `date` datetime NOT NULL,
+  `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `home_score` int(11) NOT NULL DEFAULT '0',
+  `away_score` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `events` VALUES
 	(1, 1, 2, '2018-01-01 12:00:00', "Troy, NY"),

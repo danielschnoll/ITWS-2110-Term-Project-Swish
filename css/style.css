@@ -17,16 +17,20 @@ body {
     margin-bottom: 60px;
 }
 
+
+
 .footer_contents {
 
     height: 24px;
     width: 1000px;
     margin-left: 15px;
     margin-top: 15px;
+
 }
 
 .footer_contents h6 {
     font-weight: bold;
+
 }
 
 #toast-container {
