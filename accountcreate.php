@@ -21,13 +21,11 @@
   } else {
     $dbOk = true; 
   }
-
 ?>
 
 <?php 
   include('includes/head.inc.php'); 
 ?>
-
 
 <style>
   form{

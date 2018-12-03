@@ -19,7 +19,10 @@
       $userRecord = $userResult->fetch_assoc();
 
       if($userRecord['email'] == $email){
-        echo("An account already exists with this email");
+        # echo("An account already exists with this email");
+
+        header("Location: login.php?alert=An account already exists with this email.");
+        exit;
       }
       else{
         $hashedpw = password_hash($password, PASSWORD_DEFAULT);

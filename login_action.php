@@ -26,7 +26,10 @@
       exit;
     } else
     {
-    	echo ("You do not have an account");
+        header("Location: login.php?alert=You do not have an account.");
+        exit;
+
+    	# echo ("You do not have an account");
     }
 
     $userResult->free();
