@@ -63,7 +63,7 @@
         <span class="card-title">Add a Win/Loss</span>
         <p>Enter your win or loss</p>
       </div>
-      <div class="card-action">
+      <div class="card-action white-text">
         <form class = "container" action = "post_team_score_action.php" method="post">
           <input name = "home_name" placeholder="Home Team Name" id="home_name" type="text" class="validate">
           <input name = "away_name" placeholder="Away Team Name" id="away_name" type="text" class="validate">
