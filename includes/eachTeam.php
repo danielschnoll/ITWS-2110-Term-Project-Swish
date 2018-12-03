@@ -1,14 +1,14 @@
 
 
-
 <div class="row">
   <div class="col s12 m12">
-    <div class="card light-blue darken-1">
+  	<?php $color = "card ". $colors[rand(0,5)] ." darken-1" ?>
+    <div class="<?php  echo($color);?>">
       <div class="card-content white-text">
-        
+        	
         <table>
           <thead>
             <tr>
-              <th>Team Members <?php  echo($relationNumRecords);?></th>
+              <th>Team Members </th>
             </tr>
           </thead>

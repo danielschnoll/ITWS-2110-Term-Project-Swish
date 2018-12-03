@@ -79,7 +79,6 @@
     for ($i = 0; $i < $relationNumRecords; $i++) {
       $record = $relationResult->fetch_assoc();
 
-      $randomColor = rand(0,5);
 
 
 ?>
