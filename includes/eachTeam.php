@@ -5,6 +5,7 @@
 
     <?php 
     $randomNum = rand(0,9);
+    error_reporting(0);
     while (in_array($randomNum, $numsUsed) && $numsUsed.length < $numTeamMembers) {
       $randomNum = rand(0,9);
     
