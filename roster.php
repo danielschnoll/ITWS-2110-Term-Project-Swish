@@ -64,7 +64,8 @@
 
 <?php
 
-  $colors = array("lime", "red", "pink", "purple", "blue", "teal");
+  $colors = array("lime", "red", "pink", "purple", "blue", "teal", "orange lighten", "light-green", "deep-orange ", "light-blue");
+
   //echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 
 
@@ -76,12 +77,12 @@
 
 
 
-
+    $numsUsed = array();
 
     for ($i = 0; $i < $relationNumRecords; $i++) {
       $record = $relationResult->fetch_assoc();
 
-      //$randomColor = rand(0,5);
+      
 
 
 ?>
