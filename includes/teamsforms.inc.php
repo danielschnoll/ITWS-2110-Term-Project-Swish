@@ -69,6 +69,7 @@
           <input name = "away_name" placeholder="Away Team Name" id="away_name" type="text" class="validate">
           <input name = "home_score" placeholder = "Home Team Score" id = "home_score" type = "number" class = "validate" min = "0">
           <input name = "away_score" placeholder = "Away Team Score" id = "away_score" type = "number" class = "validate" min = "0">
+          <input type = "number" disabled style="border-bottom: none;">
           <button class="btn waves-effect waves-light" type="submit" name="action">Add Game Details
             <i class="material-icons right">send</i>
           </button>

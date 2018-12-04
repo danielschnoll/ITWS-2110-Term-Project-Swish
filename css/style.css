@@ -1,3 +1,8 @@
+nav .input-field input[type]:valid {
+    border-bottom: 1px solid #9e9e9e;
+    box-shadow: inherit;
+}
+
 .footer {
     height: 60px;
     width: 100%;
@@ -10,27 +15,21 @@
     left: 0pt;
     background-color: #ee6e73;
     z-index: 1000;
-
 }
 
 body {
     margin-bottom: 60px;
 }
 
-
-
 .footer_contents {
-
     height: 24px;
     width: 1000px;
     margin-left: 15px;
     margin-top: 15px;
-
 }
 
 .footer_contents h6 {
     font-weight: bold;
-
 }
 
 #toast-container {
