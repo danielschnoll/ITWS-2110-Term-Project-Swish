@@ -22,7 +22,7 @@
       session_start();
       $_SESSION['userID'] = $userRecord['id'];
 
-      header("Location: index.php?msg=You have been logged in.");
+      header("Location: index.php?msg=You are now logged in.");
       exit;
     } else
     {
